@@ -1,0 +1,8 @@
+# ignore input and output directories
+input/*
+!input/.gitkeep
+output/*
+!output/.gitkeep
+
+*.mp3
+*.mp4
