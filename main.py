@@ -18,7 +18,11 @@ def mp3_to_mp4(mp3_filename, image_filename, start_time=None, end_time=None):
     mp3_filepath = os.path.join(INPUT_DIR, mp3_filename)
     image_filepath = os.path.join(INPUT_DIR, image_filename)
     output_filepath = os.path.join(
-        OUTPUT_DIR, mp3_filename.replace(".mp3", ".mp4").replace(".MP3", ".mp4")
+        OUTPUT_DIR,
+        mp3_filename.replace(".mp3", ".mp4")
+        .replace(".MP3", ".mp4")
+        .replace(".Mp3", ".mp4")
+        .replace(".mP3", ".mp4"),
     )
 
     # Load the audio file
