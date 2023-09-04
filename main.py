@@ -17,7 +17,9 @@ OUTPUT_DIR = "./output"
 def mp3_to_mp4(mp3_filename, image_filename, start_time=None, end_time=None):
     mp3_filepath = os.path.join(INPUT_DIR, mp3_filename)
     image_filepath = os.path.join(INPUT_DIR, image_filename)
-    output_filepath = os.path.join(OUTPUT_DIR, mp3_filename.replace(".mp3", ".mp4"))
+    output_filepath = os.path.join(
+        OUTPUT_DIR, mp3_filename.replace(".mp3", ".mp4").replace(".MP3", ".mp4")
+    )
 
     # Load the audio file
     audioclip = AudioFileClip(mp3_filepath)
@@ -67,3 +69,4 @@ def mp3_to_mp4_folder(image_filename):
 # to run, go to the main folder and execute: python main.py
 
 mp3_to_mp4_folder("rper-placeholder.jpg")
+# mp3_to_mp4("2020-01-31-16-47-36 - Bob Willcox.mp3", "rper-placeholder.jpg")
