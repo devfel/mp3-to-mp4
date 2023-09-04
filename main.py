@@ -5,6 +5,15 @@ INPUT_DIR = "./input"
 OUTPUT_DIR = "./output"
 
 
+# Convert a specified MP3 file to an MP4 video with an image as the background.
+#
+# Parameters:
+# - mp3_filename: The name of the MP3 file (located in INPUT_DIR) to be converted.
+# - image_filename: The name of the image file (located in INPUT_DIR) to use as background for the video.
+# - start_time (optional): The start time for the audio segment you want to convert. Format: 'H:MM:SS'.
+# - end_time (optional): The end time for the audio segment you want to convert. Format: 'H:MM:SS'.
+#
+# The resulting MP4 file will be saved in the OUTPUT_DIR with the same name as the input MP3 file.
 def mp3_to_mp4(mp3_filename, image_filename, start_time=None, end_time=None):
     mp3_filepath = os.path.join(INPUT_DIR, mp3_filename)
     image_filepath = os.path.join(INPUT_DIR, image_filename)
