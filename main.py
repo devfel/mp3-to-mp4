@@ -34,6 +34,21 @@ def mp3_to_mp4(mp3_filename, image_filename, start_time=None, end_time=None):
     videoclip.write_videofile(output_filepath, codec="libx264", fps=30)
 
 
+# Convert all MP3 files in the INPUT_DIR to MP4 videos using a specified image.
+# Parameters:
+# - image_filename: The name of the image file to use as background for the videos.
+def mp3_to_mp4_folder(image_filename):
+    # List all files in the INPUT_DIR
+    all_files = os.listdir(INPUT_DIR)
+
+    # Filter out only the MP3 files
+    mp3_files = [f for f in all_files if f.lower().endswith(".mp3")]
+
+    # Convert each MP3 file to MP4
+    for mp3_file in mp3_files:
+        mp3_to_mp4(mp3_file, image_filename)
+
+
 # Example usage:
 # mp3_to_mp4("sample.mp3", "image-placeholder.jpg")
 
@@ -42,4 +57,4 @@ def mp3_to_mp4(mp3_filename, image_filename, start_time=None, end_time=None):
 
 # to run, go to the main folder and execute: python main.py
 
-mp3_to_mp4("2020-02-01-15-22-31 - Leo Borges", "rper-placeholder.jpg")
+mp3_to_mp4_folder("rper-placeholder.jpg")

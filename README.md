@@ -46,15 +46,27 @@ Convert your favorite MP3 files into MP4 videos with static images, perfect for 
   Convert an entire MP3 file with a static image:
 
   ```python
-  mp3_to_mp4("sample.mp3", "image-placeholder.jpg")
+  mp3_to_mp4("sample.mp3", "background-image.jpg")
   ```
 
 - **Segmented Conversion**:
   Convert a specific segment of the MP3 file:
+
   ```python
-  mp3_to_mp4("sample.mp3", "image.jpg", "1:30:00", "1:35:00")
-  mp3_to_mp4("sample.mp3", "image.jpg", "H:MM:SS", "H:MM:SS")
+  mp3_to_mp4("sample.mp3", "background-image.jpg", "1:30:00", "1:35:00")
+  mp3_to_mp4("sample.mp3", "background-image.jpg", "H:MM:SS", "H:MM:SS")
   ```
+
+- **Entire Folder Conversion**:
+  To convert all MP3 files present in the `input` directory at once using a single background image, you can use the `mp3_to_mp4_folder` function:
+
+  Simply call the `mp3_to_mp4_folder` function with the desired background image:
+
+  ```python
+  mp3_to_mp4_folder("background-image.jpg")
+  ```
+
+  This will convert all MP3 files in the `input` directory using the specified image as the background, and save the resulting MP4 files in the `output` directory.
 
 ## 🔥 Execution
 
