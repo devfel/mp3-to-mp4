@@ -1,8 +1,8 @@
 from moviepy.editor import *
 import os
 
-INPUT_DIR = "C:\\Users\\LFVAR\\Desktop\\Coding-UF\\mp3-to-mp4\\input"
-OUTPUT_DIR = "C:\\Users\\LFVAR\\Desktop\\Coding-UF\\mp3-to-mp4\\output"
+INPUT_DIR = "./input"
+OUTPUT_DIR = "./output"
 
 
 def mp3_to_mp4(mp3_filename, image_filename, start_time=None, end_time=None):
@@ -36,7 +36,10 @@ def mp3_to_mp4(mp3_filename, image_filename, start_time=None, end_time=None):
 
 # Example usage:
 # mp3_to_mp4("sample.mp3", "image-placeholder.jpg")
-# mp3_to_mp4('sample.mp3', 'image.jpg', '1:30:00', '1:35:00')
-# mp3_to_mp4('sample.mp3', 'image.jpg', 'H:MM:SS', 'H:MM:SS')
 
-mp3_to_mp4("2020-02-07-13-33-01-part2.mp3", "rper-placeholder.jpg")
+# mp3_to_mp4('sample.mp3', 'image.jpg', 'H:MM:SS', 'H:MM:SS')
+# mp3_to_mp4('sample.mp3', 'image.jpg', '1:30:00', '1:35:00')
+
+# to run, go to the main folder and execute: python main.py
+
+mp3_to_mp4("2020-02-01-15-22-31 - Leo Borges", "rper-placeholder.jpg")
