@@ -1,4 +1,4 @@
-from moviepy.editor import *
+from moviepy import *
 import os
 
 INPUT_DIR = "./input"
@@ -36,14 +36,14 @@ def mp3_to_mp4(mp3_filename, image_filename, start_time=None, end_time=None):
     imgclip = ImageClip(image_filepath)
 
     # Set the duration of the image to the duration of the audio
-    imgclip = imgclip.set_duration(audioclip.duration)
+    imgclip = imgclip.with_duration(audioclip.duration)
 
     # Set the audio of the image clip to our audio
-    videoclip = imgclip.set_audio(audioclip)
+    videoclip = imgclip.with_audio(audioclip)
 
     # Set fps and resize video
     videoclip.fps = 30
-    videoclip = videoclip.resize((1280, 720))
+    videoclip = videoclip.resized((1280, 720))
 
     # Export the video clip as an MP4 file
     videoclip.write_videofile(output_filepath, codec="libx264", fps=30)
